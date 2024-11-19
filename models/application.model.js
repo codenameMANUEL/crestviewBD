@@ -1,49 +1,46 @@
-// const mongoose = require("mongoose");
-
-// const ApplicationSchema = mongoose.Schema(
-//     {
-//         full_name: {
-//             type: String,
-//             require: [true, "Please enter your name"]
-//         },
-//         email: {
-//             type: String,
-//             require: [true, "Please enter a correct email"]
-//         },
-//         cv: {
-//             type: String,
-//             require: [true, "Please select a cv"]
-//         }
-//     },
-//     {
-//         timeStamps: true
-//     }
-// );
-
-// const Application = mongoose.model("Application", ApplicationSchema)
-// module.exports = Application;
-
 const mongoose = require("mongoose");
 
 const ApplicationSchema = mongoose.Schema(
     {
         full_name: {
             type: String,
-            required: true,  // Changed from 'require' to 'required'
+            required: true,  
         },
         email: {
             type: String,
-            required: true,  // Changed from 'require' to 'required'
+            required: true,  
         },
         cv: {
             type: String,
-            required: true,  // Changed from 'require' to 'required'
+            required: true,  
         }
     },
     {
-        timestamps: true    // Changed from 'timeStamps' to 'timestamps'
+        timestamps: true
     }
 );
 
+const EnquirySchema = mongoose.Schema(
+    {
+        full_name: {
+            type: String,
+            required: true,  
+        },
+        email: {
+            type: String,
+            required: true,  
+        },
+        message: {
+            type: String,
+            required: true,  
+        }
+    },
+    {
+        timestamps: true
+    }
+);
+
+
 const Application = mongoose.model("Application", ApplicationSchema);
-module.exports = Application;
+const Enquiry = mongoose.model("Enquiry", EnquirySchema);
+module.exports = {Application, Enquiry};
