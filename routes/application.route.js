@@ -8,8 +8,8 @@ const {
 } = require("../controller/application.controller.js");
 
 router.get("/", getAllApplications);
-router.get("/enqiry", getAllEnquiries);
+router.get("/enquiry", getAllEnquiries);
 router.post("/", createApplication);
-router.post("/enqiry", createEnqiry);
+router.post("/enquiry", createEnqiry);
 
 module.exports = router;
